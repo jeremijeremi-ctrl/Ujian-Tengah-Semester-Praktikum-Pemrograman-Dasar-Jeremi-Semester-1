@@ -1,56 +1,77 @@
-
 #include <iostream>
 using namespace std;
 
-
-    
-int main() {
-    int number[8];
-    int max,min,average,sum_ganjil,sum_genap;
-    // Write C++ code here
-
-    for (int i=0;i<8;i++){
-        int val;
-        cin >> val;
-        number[i] = val;
+// Fungsi void untuk mencari nilai maksimum
+void cetakMax(const int number[], int size) {
+    int max = number[0];
+    for (int i = 1; i < size; i++) {
+        if (number[i] > max) {
+            max = number[i];
+        }
     }
+    cout << "Nilai Max     : " << max << endl;
+}
 
-//max
-   
-for (int i = 0; i<8 ; i++){
-       if (number[i]>max){
-           max = number[i];
-       }
-   }
-       //min
-    for (int i =0; i<8;i++){
-        if (number[i] < min){
+// Fungsi void untuk mencari nilai minimum
+void cetakMin(const int number[], int size) {
+    int min = number[0];
+    for (int i = 1; i < size; i++) {
+        if (number[i] < min) {
             min = number[i];
         }
     }
+    cout << "Nilai Min     : " << min << endl;
+}
 
-    //average
-    int sum =0;
-    for (int i=0;i<8;i++){
+// Fungsi void untuk menghitung rata-rata
+void cetakAverage(const int number[], int size) {
+    double sum = 0;
+    for (int i = 0; i < size; i++) {
         sum += number[i];
     }
-    average = sum/8;
+    double average = sum / size;
+    cout << "Rata-rata     : " << average << endl;
+}
 
-    //jumlah_genap
-    for (int i=0;i<8;i++){
-        if (number[i]%2 ==0){
-            sum_genap+=1;
+// Fungsi void untuk menghitung jumlah angka genap
+void cetakJumlahGenap(const int number[], int size) {
+    int sum_genap = 0;
+    for (int i = 0; i < size; i++) {
+        if (number[i] % 2 == 0) {
+            sum_genap++;
         }
     }
+    cout << "Jumlah Genap  : " << sum_genap << endl;
+}
 
-    //jumlah_ganjil
-    for (int i=0;i<8;i++){
-        if (number[i]%2 ==1){
-            sum_ganjil+=1;
+// Fungsi void untuk menghitung jumlah angka ganjil
+void cetakJumlahGanjil(const int number[], int size) {
+    int sum_ganjil = 0;
+    for (int i = 0; i < size; i++) {
+        if (number[i] % 2 != 0) {
+            sum_ganjil++;
         }
     }
-    cout << ; 
-  
+    cout << "Jumlah Ganjil : " << sum_ganjil << endl;
+}
+
+int main() {
+    const int SIZE = 8;
+    int number[SIZE];
+
+    cout << "Masukkan " << SIZE << " angka:" << endl;
+    for (int i = 0; i < SIZE; i++) {
+        cin >> number[i];
+    }
+
+    cout << "\n--- HASIL ANALISIS ---" << endl;
+    
+    // Memanggil setiap fungsi void
+    cetakMax(number, SIZE);
+    cetakMin(number, SIZE);
+    cetakAverage(number, SIZE);
+    cetakJumlahGenap(number, SIZE);
+    cetakJumlahGanjil(number, SIZE);
 
     return 0;
 }
