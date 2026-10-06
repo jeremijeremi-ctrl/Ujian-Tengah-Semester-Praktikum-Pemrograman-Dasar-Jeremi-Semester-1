@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Fungsi void untuk mencari nilai maksimum
+
 void cetakMax(const int number[], int size) {
     int max = number[0];
     for (int i = 1; i < size; i++) {
@@ -12,7 +12,7 @@ void cetakMax(const int number[], int size) {
     cout << "Nilai Max     : " << max << endl;
 }
 
-// Fungsi void untuk mencari nilai minimum
+
 void cetakMin(const int number[], int size) {
     int min = number[0];
     for (int i = 1; i < size; i++) {
@@ -23,7 +23,7 @@ void cetakMin(const int number[], int size) {
     cout << "Nilai Min     : " << min << endl;
 }
 
-// Fungsi void untuk menghitung rata-rata
+
 void cetakAverage(const int number[], int size) {
     double sum = 0;
     for (int i = 0; i < size; i++) {
@@ -33,7 +33,7 @@ void cetakAverage(const int number[], int size) {
     cout << "Rata-rata     : " << average << endl;
 }
 
-// Fungsi void untuk menghitung jumlah angka genap
+
 void cetakJumlahGenap(const int number[], int size) {
     int sum_genap = 0;
     for (int i = 0; i < size; i++) {
@@ -44,7 +44,7 @@ void cetakJumlahGenap(const int number[], int size) {
     cout << "Jumlah Genap  : " << sum_genap << endl;
 }
 
-// Fungsi void untuk menghitung jumlah angka ganjil
+
 void cetakJumlahGanjil(const int number[], int size) {
     int sum_ganjil = 0;
     for (int i = 0; i < size; i++) {
@@ -66,7 +66,7 @@ int main() {
 
     cout << "\n--- HASIL ANALISIS ---" << endl;
     
-    // Memanggil setiap fungsi void
+
     cetakMax(number, SIZE);
     cetakMin(number, SIZE);
     cetakAverage(number, SIZE);
